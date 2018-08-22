@@ -1,0 +1,88 @@
+﻿<div bsModal #processBatchModal="bs-modal" class="modal fade" (onShown)="onShown()" tabindex="-1" role="dialog" aria-labelledby="processBatchModal" aria-hidden="true" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog">
+
+        <div #modalContent class="modal-content">
+
+            <form *ngIf="active" #processBatchFrm="ngForm" id="frm_process_batch" novalidate (ngSubmit)="save()">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="close()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">
+                        <span><!--{{l("ProcessBatch")}}--> Batch Receiving</span>
+                    </h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="dateReceived" type="text" name="dateReceived" class="validate form-control">
+                                    <label for="dateReceived" class="form-label">{{l("Date")}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="grnNumber" type="text" name="grnNumber" required minlength="2" class="validate form-control">
+                                    <label for="grnNumber" class="form-label">{{l("GrnNumber")}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="supplier" type="text" name="supplier" required maxlength="32" minlength="2" class="validate form-control">
+                                    <label for="supplier" class="form-label">{{l("Supplier")}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="qty" type="text" name="qty" required maxlength="32" minlength="2" class="validate form-control">
+                                    <label for="qty" class="form-label">{{l("Quantity")}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="weight" type="text" name="weight" class="validate form-control">
+                                    <label for="weight" class="form-label">{{l("Weight")}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button [disabled]="saving" type="button" class="btn btn-default waves-effect" (click)="close()">
+                        {{l("Cancel")}}
+                    </button>
+                    <button [disabled]="!processBatchFrm.form.valid || saving" type="submit" class="btn btn-primary waves-effect">
+                        {{l("Save")}}
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
