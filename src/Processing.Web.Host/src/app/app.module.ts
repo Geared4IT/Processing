@@ -33,6 +33,7 @@ import { SideBarNavComponent } from '@app/layout/sidebar-nav.component';
 import { SideBarFooterComponent } from '@app/layout/sidebar-footer.component';
 import { RightSideBarComponent } from '@app/layout/right-sidebar.component';
 import { ProcessBatchComponent } from '@app/home/process-batch/process-batch.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import { ProcessBatchComponent } from '@app/home/process-batch/process-batch.com
         SideBarNavComponent,
         SideBarFooterComponent,
         RightSideBarComponent,
-        ProcessBatchComponent
+        ProcessBatchComponent//,
+       // NgbModule
     
     ],
     imports: [
@@ -67,7 +69,8 @@ import { ProcessBatchComponent } from '@app/home/process-batch/process-batch.com
         AppRoutingModule,
         ServiceProxyModule,
         SharedModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        NgbModule
     ],
     providers: [
 

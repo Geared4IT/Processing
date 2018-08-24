@@ -16,6 +16,8 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
         super(injector);
     }
 
+    mockUpStatus = -1;
+
     ngAfterViewInit(): void {
 
     }
@@ -27,9 +29,16 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
     // Show Modals
     processBatchReceiving(): void {
         this.processBatchModal.show();
+        this.mockUpStatus = 0;
     }
 
-    //editBatchReceiving(batch: BatchDto): void {
-    //    this.editBatchReceivingModal.show(batch.id);
-    //}
+    backToDashboard(): void {
+        this.mockUpStatus = 0
+            ;
+    }
+
+    showLotProcessingDetails(): void {
+        this.mockUpStatus = 3;
+    }
+
 }

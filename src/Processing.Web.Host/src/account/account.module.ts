@@ -20,7 +20,8 @@ import { TenantChangeModalComponent } from './tenant/tenant-change-modal.compone
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AccountLanguagesComponent } from './layout/account-languages.component';
-
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+ 
 import { LoginService } from './login/login.service';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { LoginService } from './login/login.service';
         SharedModule,
         ServiceProxyModule,
         AccountRoutingModule,
-        ModalModule.forRoot()
+        ModalModule.forRoot()//,
+       // NgbModule
     ],
     declarations: [
         AccountComponent,

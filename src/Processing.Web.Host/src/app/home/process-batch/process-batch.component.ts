@@ -18,13 +18,18 @@ export class ProcessBatchComponent extends AppComponentBase implements OnInit {
     active: boolean = false;
     saving: boolean = false;
 
+    today = null;
+   
     constructor(
         injector: Injector
     ) {
         super(injector);
+       
     }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        this.today = new Date();
+    }
 
     show(): void {
         this.active = true;

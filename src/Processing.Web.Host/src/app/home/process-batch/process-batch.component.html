@@ -9,61 +9,63 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title">
-                        <span><!--{{l("ProcessBatch")}}--> Batch Receiving</span>
+                        <span>{{l("ReceiveBatch")}}</span>
                     </h4>
                 </div>
 
                 <div class="modal-body">
 
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="dateReceived" type="text" name="dateReceived" class="validate form-control">
-                                    <label for="dateReceived" class="form-label">{{l("Date")}}</label>
+                    <div class="form-group" name="batchReceiving" id="batchReceiving" ng-show="mockUpStatus === 0">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <p> {{ today }}</p>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="grnNumber" type="text" name="grnNumber" required minlength="2" class="validate form-control">
-                                    <label for="grnNumber" class="form-label">{{l("GrnNumber")}}</label>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="grnNumber" type="text" name="grnNumber" required minlength="2" class="validate form-control">
+                                        <label for="grnNumber" class="form-label">{{l("GrnNumber")}}</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="supplier" type="text" name="supplier" required maxlength="32" minlength="2" class="validate form-control">
-                                    <label for="supplier" class="form-label">{{l("Supplier")}}</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row clearfix">
-                        <div class="col-sm-6">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="qty" type="text" name="qty" required maxlength="32" minlength="2" class="validate form-control">
-                                    <label for="qty" class="form-label">{{l("Quantity")}}</label>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="supplier" type="text" name="supplier" required maxlength="32" minlength="2" class="validate form-control">
+                                        <label for="supplier" class="form-label">{{l("Supplier")}}</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-sm-6">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="weight" type="text" name="weight" class="validate form-control">
-                                    <label for="weight" class="form-label">{{l("Weight")}}</label>
+
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="qty" type="text" name="qty" required maxlength="32" minlength="2" class="validate form-control">
+                                        <label for="qty" class="form-label">{{l("Quantity")}}</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="weight" type="text" name="weight" class="validate form-control">
+                                        <label for="weight" class="form-label">{{l("Weight")}}</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -76,13 +78,11 @@
                     <button [disabled]="saving" type="button" class="btn btn-default waves-effect" (click)="close()">
                         {{l("Cancel")}}
                     </button>
-                    <button [disabled]="!processBatchFrm.form.valid || saving" type="submit" class="btn btn-primary waves-effect">
+                    <button   type="button" class="btn btn-primary waves-effect" (click)="close()">
                         {{l("Save")}}
                     </button>
                 </div>
-
             </form>
-
         </div>
     </div>
 </div>
