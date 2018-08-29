@@ -41,4 +41,6 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
         this.mockUpStatus = 3;
     }
 
+    refresh(): void {}
+
 }

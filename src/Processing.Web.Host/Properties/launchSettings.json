@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:21021/",
+      "applicationUrl": "http://banzologix.azurewebsites.net:21021/",
       "sslPort": 0
     }
   },
@@ -12,17 +12,18 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "Key": "Value",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "Processing.Web.Host": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:21021",
+      "launchUrl": "http://banzologix.azurewebsites.net:21021",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:12021/"
+      "applicationUrl": "http://banzologix.azurewebsites.net:12021/"
     }
   }
 }
