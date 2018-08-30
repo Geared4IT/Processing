@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://banzologix.azurewebsites.net:21021/",
+      "applicationUrl": "http://banzologix.azurewebsites.net:21021",
       "sslPort": 0
     }
   },

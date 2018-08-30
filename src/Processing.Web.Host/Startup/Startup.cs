@@ -23,7 +23,7 @@ namespace Processing.Web.Host.Startup
 {
     public class Startup
     {
-        private const string _defaultCorsPolicyName = "localhost";
+        private const string _defaultCorsPolicyName = "localhost";// "banzologix.azurewebsites.net
 
         private readonly IConfigurationRoot _appConfiguration;
 
@@ -43,20 +43,20 @@ namespace Processing.Web.Host.Startup
             services.AddSignalR();
 
             // Configure CORS for angular2 UI
-            services.AddCors( options => options.AddPolicy(
-                    _defaultCorsPolicyName,
-                    builder => builder
-                        .WithOrigins(
-                            _appConfiguration["App:CorsOrigins"]
-                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => o.RemovePostFix("/"))
-                                .ToArray()
-                        )
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials()
-                        .AllowAnyOrigin()
-                )
+            services.AddCors(options => options.AddPolicy(
+                   _defaultCorsPolicyName,
+                   builder => builder
+                       .WithOrigins(
+                           _appConfiguration["App:CorsOrigins"]
+                               .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                               .Select(o => o.RemovePostFix("/"))
+                               .ToArray()
+                       )
+                       .AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials()
+                       .AllowAnyOrigin()
+               )
             );
 
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
@@ -91,7 +91,7 @@ namespace Processing.Web.Host.Startup
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
             app.UseCors(_defaultCorsPolicyName); // Enable CORS!
-
+          
             app.Use(async (context, next) => { await next(); if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value)) { context.Request.Path = "/index.html"; await next(); } });
             app.UseStaticFiles();
 
@@ -99,11 +99,11 @@ namespace Processing.Web.Host.Startup
 
             app.UseAbpRequestLocalization();
 
-
             app.UseSignalR(routes =>
             {
                 routes.MapHub<AbpCommonHub>("/signalr");
             });
+
 
             app.UseMvc(routes =>
             {

@@ -33,8 +33,7 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
     }
 
     backToDashboard(): void {
-        this.mockUpStatus = 0
-            ;
+        this.mockUpStatus = 0;
     }
 
     showLotProcessingDetails(): void {

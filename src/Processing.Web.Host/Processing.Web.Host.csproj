@@ -28,6 +28,7 @@
     <ProjectReference Include="..\Processing.Web.Core\Processing.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
